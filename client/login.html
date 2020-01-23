@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    </head>
+    <body>
+        <main>
+            <div class="wrapper">
+                  <div class="grid-container">
+                        <div class="login-container">
+                          <div class="cell-one">
+                            Hide Show<input type="checkbox" ng-model="signup">
+                              <h2 ng-hide="signup">Login Here!</h2>
+                              <h2 ng-show="signup">Sign Up Here!</h2>
+                          </div>
+                          <div>
+                            <div class="form-group" ng-show="signup">
+                              <input style="width: 15rem; margin-left: 3rem;" type="text" class="form-control" id="exampleInputFname" placeholder="First Name">
+                            </div>
+                            <div class="form-group" ng-show="signup">
+                              <input style="width: 15rem; margin-left: 3rem;" type="text" class="form-control" id="exampleInputLname" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <h3 ng-hide="signup">User Id</h3>
+                                <input style="width: 15rem; margin-left: 3rem;" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <h3 ng-hide="signup">Password</h3>
+                                <input style="width: 15rem; margin-left: 3rem;" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <div>
+                              <h6 ng-hide="signup">New to Weather App? <a href="#" style="color: blue;">Sign Up</a> </h6>
+                            </div>
+                          </div>
+                          <div>
+                            <a ng-hide="signup" href="#" style="padding: 20px 50px" class="btn btn-primary">Login</a>
+                            <a ng-show="signup" href="#" style="padding: 20px 50px" class="btn btn-primary">Sign Up</a>
+                          </div>
+                        </div>
+                        <div class="grid-container-image">
+                            
+                        </div>
+                  </div>
+                </div>
+        </main>
+    </body>
+</html>
