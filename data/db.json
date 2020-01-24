@@ -1,0 +1,22 @@
+[
+  {
+    "firstName": "Nandan",
+    "lastName": "Kalaria",
+    "email": "nandan@123.com",
+    "pwd": "123"
+  },
+
+  {
+    "firstName": "Tony",
+    "lastName": "Stark",
+    "email": "tony@123.com",
+    "pwd": "123"
+  },
+
+  {
+    "firstName": "Bruce",
+    "lastName": "Banner",
+    "email": "bruce@123.com",
+    "pwd": "123"
+  }
+]

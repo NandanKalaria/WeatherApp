@@ -4,7 +4,9 @@
   "description": "Weather Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "json:server": "json-server --watch db.json",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver json:server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/NandanKalaria/Weather-App/issues"
   },
-  "homepage": "https://github.com/NandanKalaria/Weather-App#readme"
+  "homepage": "https://github.com/NandanKalaria/Weather-App#readme",
+  "dependencies": {
+    "angular-material": "^1.1.21",
+    "json-server": "^0.15.1"
+  }
 }

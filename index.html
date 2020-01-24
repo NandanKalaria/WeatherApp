@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="Weather">
+    <head>
+        <title>Weather Application</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.24/angular-ui-router.js"></script>
+        <script src="/assets/scripts/script.js"></script>
+
+    </head>
+    <body>
+        <header class="row" style="background-color: white;">
+            <div ng-init="logo_location = '/assets/img/logo.png'">
+                <img class="logo" ng-src="{{logo_location}}">
+            </div>
+            <div>
+                <h1 class="app-name">Weather Application</h1>
+            </div>
+        </header>
+        <main ng-controller="myController">
+            <div>
+                <ng-view></ng-view>
+            </div>
+            <div>
+                {{users}}
+
+            </div>
+        </main>
+    </body>
+</html>
