@@ -1,5 +1,5 @@
 var app = angular
-            .module("Weather",["ngRoute"])
+            .module("Weather",['ngRoute', 'ngMaterial'])
             .config(function ($routeProvider, $locationProvider){
                 $routeProvider.caseInsensitiveMatch = true;
 
@@ -13,6 +13,8 @@ var app = angular
                         templateUrl: "client/views/register.html",
                        // controller: "registerController"
                     })
+
+                    
             })
             .controller("myController", ["$scope", "$http", function ($scope, $http){
                 
@@ -34,7 +36,7 @@ var app = angular
                         
                     };
 
-                    $http.post("/data/db.json", JSON.stringify(data))
+                    $http.post("http://localhost:3000/users", JSON.stringify(data))
                     .then(function (response) {
                         console.log(response);
                         },function(error){
@@ -43,15 +45,25 @@ var app = angular
                     })
                 };
 
+                  $scope.email = null;
+                  $scope.password = null;
 
-                $http({
+                  $scope.loginUser = function(email, password){
+
+                  $http({
                     method : "GET",
-                      url : "/data/db.json"
+                      url : `http://localhost:3000/users?email=${email}`
                   }).then(function mySuccess(response) {
-                    $scope.users = response.data;
+                      if(response.data[0].pwd==password){
+                        alert("Logged In!");
+                      }
+
+                      else{
+                          alert("User ID or Password Incorrect.")
+                      }
+                    
                   }, function myError(response) {
                     $scope.users = response.statusText;
                   });  
-
-                  console.log("Get Method Working");
+                };
             }]);

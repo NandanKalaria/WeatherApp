@@ -5,25 +5,33 @@
         <h2>Sign Up Here!</h2>
       </div>
       <div>
-        <div class="form-group">
-          <input style="width: 15rem; margin-left: 3rem;" type="text" class="form-control" id="exampleInputFname"
-          ng-model="fname" placeholder="First Name">
+        <div>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>First Name</label>
+            <input ng-model="fname">
+          </md-input-container>
         </div>
-        <div class="form-group">
-          <input style="width: 15rem; margin-left: 3rem;" type="text" class="form-control" id="exampleInputLname"
-          ng-model="lname" placeholder="Last Name">
+        <div>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Last Name</label>
+            <input ng-model="lname">
+          </md-input-container>
         </div>
-        <div class="form-group">
-          <input style="width: 15rem; margin-left: 3rem;" type="email" class="form-control" id="exampleInputEmail1"
-            aria-describedby="emailHelp" placeholder="Enter email" ng-model="eid">
+        <div>
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>E-mail</label>
+              <input ng-model="eid">
+            </md-input-container>
         </div>
-        <div class="form-group">
-          <input style="width: 15rem; margin-left: 3rem;" type="password" class="form-control"
-            id="exampleInputPassword1" placeholder="Password" ng-model="pwd">
+        <div>
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Password</label>
+              <input ng-model="pwd">
+            </md-input-container>
         </div>
       </div>
       <div>
-        <a href="#" style="padding: 20px 50px" class="btn btn-primary" ng-click="adduser(fname, lname, eid, pwd)">Sign Up</a>
+        <md-button class="md-raised md-primary" ng-click="adduser(fname, lname, eid, pwd)">Sign Up</md-button>
       </div>
     </div>
     <div class="grid-container-image">
