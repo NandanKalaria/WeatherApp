@@ -4,9 +4,9 @@
   "description": "Weather Application",
   "main": "index.js",
   "scripts": {
-    "json:server": "json-server --watch db.json",
+    "watch:less": "less-watch-compile less css",
     "devserver": "live-server",
-    "start": "npm-run-all --parallel devserver json:server"
+    "start": "npm-run-all --parallel devserver watch:server"
   },
   "repository": {
     "type": "git",

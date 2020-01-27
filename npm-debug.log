@@ -1,94 +1,44 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'angularjs@0.3.2' ]
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'run', 'watch:less' ]
 2 info using npm@3.5.2
 3 info using node@v8.10.0
-4 silly loadCurrentTree Starting
-5 silly install loadCurrentTree
-6 silly install readLocalPackageData
-7 silly fetchPackageMetaData angularjs@0.3.2
-8 silly fetchNamedPackageData angularjs
-9 silly mapToRegistry name angularjs
-10 silly mapToRegistry using default registry
-11 silly mapToRegistry registry https://registry.npmjs.org/
-12 silly mapToRegistry uri https://registry.npmjs.org/angularjs
-13 verbose request uri https://registry.npmjs.org/angularjs
-14 verbose request no auth needed
-15 info attempt registry request try #1 at 15:56:26
-16 verbose request id 8ec912b3a20432ec
-17 verbose etag W/"555ba3e470d9d1f5196cf7c3f0d2a372"
-18 verbose lastModified Sat, 26 May 2018 16:52:40 GMT
-19 http request GET https://registry.npmjs.org/angularjs
-20 http 304 https://registry.npmjs.org/angularjs
-21 verbose headers { date: 'Mon, 27 Jan 2020 10:26:28 GMT',
-21 verbose headers   connection: 'keep-alive',
-21 verbose headers   'set-cookie':
-21 verbose headers    [ '__cfduid=dbf04445a61c71ed3504b310e19f5601d1580120787; expires=Wed, 26-Feb-20 10:26:27 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
-21 verbose headers   'cf-ray': '55ba07475edfd5c4-BOM',
-21 verbose headers   'cache-control': 'public, max-age=300',
-21 verbose headers   etag: '"555ba3e470d9d1f5196cf7c3f0d2a372"',
-21 verbose headers   'last-modified': 'Sat, 26 May 2018 16:52:40 GMT',
-21 verbose headers   vary: 'Accept-Encoding',
-21 verbose headers   'cf-cache-status': 'REVALIDATED',
-21 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
-21 verbose headers   server: 'cloudflare' }
-22 silly get cb [ 304,
-22 silly get   { date: 'Mon, 27 Jan 2020 10:26:28 GMT',
-22 silly get     connection: 'keep-alive',
-22 silly get     'set-cookie':
-22 silly get      [ '__cfduid=dbf04445a61c71ed3504b310e19f5601d1580120787; expires=Wed, 26-Feb-20 10:26:27 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
-22 silly get     'cf-ray': '55ba07475edfd5c4-BOM',
-22 silly get     'cache-control': 'public, max-age=300',
-22 silly get     etag: '"555ba3e470d9d1f5196cf7c3f0d2a372"',
-22 silly get     'last-modified': 'Sat, 26 May 2018 16:52:40 GMT',
-22 silly get     vary: 'Accept-Encoding',
-22 silly get     'cf-cache-status': 'REVALIDATED',
-22 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
-22 silly get     server: 'cloudflare' } ]
-23 verbose etag https://registry.npmjs.org/angularjs from cache
-24 verbose get saving angularjs to /home/jeavio71/.npm/registry.npmjs.org/angularjs/.cache.json
-25 silly fetchPackageMetaData Error: No compatible version found: angularjs@0.3.2
-25 silly fetchPackageMetaData Valid install targets:
-25 silly fetchPackageMetaData 0.0.1
-25 silly fetchPackageMetaData
-25 silly fetchPackageMetaData     at pickVersionFromRegistryDocument (/usr/share/npm/lib/fetch-package-metadata.js:156:16)
-25 silly fetchPackageMetaData     at /usr/share/npm/node_modules/iferr/index.js:13:50
-25 silly fetchPackageMetaData     at /usr/share/npm/lib/utils/pulse-till-done.js:19:8
-25 silly fetchPackageMetaData     at saved (/usr/share/npm/lib/cache/caching-client.js:168:7)
-25 silly fetchPackageMetaData     at /usr/share/npm/node_modules/graceful-fs/polyfills.js:210:7
-25 silly fetchPackageMetaData     at FSReqWrap.oncomplete (fs.js:135:15)
-25 silly fetchPackageMetaData  error for angularjs@0.3.2 Error: No compatible version found: angularjs@0.3.2
-25 silly fetchPackageMetaData Valid install targets:
-25 silly fetchPackageMetaData 0.0.1
-25 silly fetchPackageMetaData
-25 silly fetchPackageMetaData     at pickVersionFromRegistryDocument (/usr/share/npm/lib/fetch-package-metadata.js:156:16)
-25 silly fetchPackageMetaData     at /usr/share/npm/node_modules/iferr/index.js:13:50
-25 silly fetchPackageMetaData     at /usr/share/npm/lib/utils/pulse-till-done.js:19:8
-25 silly fetchPackageMetaData     at saved (/usr/share/npm/lib/cache/caching-client.js:168:7)
-25 silly fetchPackageMetaData     at /usr/share/npm/node_modules/graceful-fs/polyfills.js:210:7
-25 silly fetchPackageMetaData     at FSReqWrap.oncomplete (fs.js:135:15)
-26 silly rollbackFailedOptional Starting
-27 silly rollbackFailedOptional Finishing
-28 silly runTopLevelLifecycles Starting
-29 silly runTopLevelLifecycles Finishing
-30 silly install printInstalled
-31 verbose stack Error: No compatible version found: angularjs@0.3.2
-31 verbose stack Valid install targets:
-31 verbose stack 0.0.1
-31 verbose stack
-31 verbose stack     at pickVersionFromRegistryDocument (/usr/share/npm/lib/fetch-package-metadata.js:156:16)
-31 verbose stack     at /usr/share/npm/node_modules/iferr/index.js:13:50
-31 verbose stack     at /usr/share/npm/lib/utils/pulse-till-done.js:19:8
-31 verbose stack     at saved (/usr/share/npm/lib/cache/caching-client.js:168:7)
-31 verbose stack     at /usr/share/npm/node_modules/graceful-fs/polyfills.js:210:7
-31 verbose stack     at FSReqWrap.oncomplete (fs.js:135:15)
-32 verbose cwd /home/jeavio71/Weather App
-33 error Linux 5.0.0-37-generic
-34 error argv "/usr/bin/node" "/usr/bin/npm" "install" "angularjs@0.3.2"
-35 error node v8.10.0
-36 error npm  v3.5.2
-37 error No compatible version found: angularjs@0.3.2
-37 error Valid install targets:
-37 error 0.0.1
-38 error If you need help, you may report this error at:
-38 error     <https://github.com/npm/npm/issues>
-39 verbose exit [ 1, true ]
+4 verbose run-script [ 'prewatch:less', 'watch:less', 'postwatch:less' ]
+5 info lifecycle weather-app@1.0.0~prewatch:less: weather-app@1.0.0
+6 silly lifecycle weather-app@1.0.0~prewatch:less: no script for prewatch:less, continuing
+7 info lifecycle weather-app@1.0.0~watch:less: weather-app@1.0.0
+8 verbose lifecycle weather-app@1.0.0~watch:less: unsafe-perm in lifecycle true
+9 verbose lifecycle weather-app@1.0.0~watch:less: PATH: /usr/share/npm/bin/node-gyp-bin:/home/jeavio71/Weather App/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+10 verbose lifecycle weather-app@1.0.0~watch:less: CWD: /home/jeavio71/Weather App
+11 silly lifecycle weather-app@1.0.0~watch:less: Args: [ '-c', 'less-watch-compile less css' ]
+12 info lifecycle weather-app@1.0.0~watch:less: Failed to exec watch:less script
+13 verbose stack Error: weather-app@1.0.0 watch:less: `less-watch-compile less css`
+13 verbose stack spawn ENOENT
+13 verbose stack     at ChildProcess.<anonymous> (/usr/share/npm/lib/utils/spawn.js:17:16)
+13 verbose stack     at emitTwo (events.js:126:13)
+13 verbose stack     at ChildProcess.emit (events.js:214:7)
+13 verbose stack     at maybeClose (internal/child_process.js:925:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+14 verbose pkgid weather-app@1.0.0
+15 verbose cwd /home/jeavio71/Weather App
+16 error Linux 5.0.0-37-generic
+17 error argv "/usr/bin/node" "/usr/bin/npm" "run" "watch:less"
+18 error node v8.10.0
+19 error npm  v3.5.2
+20 error file sh
+21 error code ELIFECYCLE
+22 error errno ENOENT
+23 error syscall spawn
+24 error weather-app@1.0.0 watch:less: `less-watch-compile less css`
+24 error spawn ENOENT
+25 error Failed at the weather-app@1.0.0 watch:less script 'less-watch-compile less css'.
+25 error Make sure you have the latest version of node.js and npm installed.
+25 error If you do, this is most likely a problem with the weather-app package,
+25 error not with npm itself.
+25 error Tell the author that this fails on your system:
+25 error     less-watch-compile less css
+25 error You can get information on how to open an issue for this project with:
+25 error     npm bugs weather-app
+25 error Or if that isn't available, you can get their info via:
+25 error     npm owner ls weather-app
+25 error There is likely additional logging output above.
+26 verbose exit [ 1, true ]
