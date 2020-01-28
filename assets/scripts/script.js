@@ -14,6 +14,21 @@ var app = angular
                        // controller: "registerController"
                     })
 
+
+                  .when('/users/:username', {
+                    templateUrl: 'client/views/dashboard.html',
+                    controller: 'userController'
+                })
+
+                .when("/users/:username/shared-cities", {
+                  templateUrl: "client/views/shared-city.html",
+                 // controller: "registerController"
+              })
+
+                  .otherwise({
+                    redirectTo: "/"
+                });
+
                     
             })
 
@@ -27,7 +42,7 @@ var app = angular
                 }
               })
 
-            .controller("myController", ["$scope", "$http", function ($scope, $http){
+            .controller("myController", ["$scope", "$http", "$location", function ($scope, $http, $location){
                 
                 $scope.fname = null;
                 $scope.lname = null;
@@ -66,7 +81,12 @@ var app = angular
                       url : `http://localhost:3000/users?email=${email}`
                   }).then(function mySuccess(response) {
                       if(response.data[0].pwd==password){
-                        alert("Logged In!");
+                        
+
+                        $scope.username=response.data[0].firstName;
+
+                        $location.path('/users/' + response.data[0].firstName)
+
                       }
 
                       else{
@@ -78,3 +98,11 @@ var app = angular
                   });  
                 };
             }]);
+             
+            $scope.sharedCity=function(){
+              $location.path('/users/' + response.data[0].firstName + 'shared-cities')
+            }
+
+            app.controller("userController", function ($scope, $routeParams) {
+              $scope.username = $routeParams.username;
+          });
