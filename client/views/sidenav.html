@@ -55,10 +55,9 @@
     </md-sidenav>
 
     <md-content flex layout-padding>
-
-      <div ng-click="toggleLeft()" ng-init="nav_location = '/assets/img/nav.png'">
-        <img class="logo" ng-src="{{nav_location}}">
-      </div>
+      <md-button style="margin-left: 20px;" ng-disabled="false" ng-click="toggleLeft()" class="md-icon-button md-primary" aria-label="Settings">
+        <md-icon md-svg-icon="/assets/img/nav.svg"></md-icon>
+      </md-button>
 </div>
 
 </div>

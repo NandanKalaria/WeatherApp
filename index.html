@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body ng-controller="myController">
     <header class="row" style="background-color: white;">
         <ng-include src=" 'client/views/sidenav.html' "></ng-include>
         <!--
@@ -26,10 +26,11 @@
             <h1 class="app-name">Weather Application</h1>
         </div>
     </header>
-    <main ng-controller="myController">
+    <main >
         <div>
             <ng-view></ng-view>
         </div>
+        <ng-include src=" 'client/views/add-city.html' "></ng-include>
     </main>
 
     <!-- Angular Material requires Angular.js Libraries -->
@@ -52,6 +53,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.24/angular-ui-router.js"></script>
 
     <script src="/assets/scripts/script.js"></script>
+    <script src="/client/controllers/login.js"></script>
+    <script src="/client/controllers/nav.js"></script>
+    <script src="/client/controllers/login.js"></script>
 
 </body>
 
