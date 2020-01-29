@@ -4,8 +4,8 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope" ,fu
     $scope.lname = null;
     $scope.eid = null;
     $scope.pwd = null;
-    $scope.loggedOut = true;
-    
+    $rootScope.loggedOut = false;
+
 
     $scope.sharedCity = function(){
       $location.path('/users/' + username + '/sharedCities')

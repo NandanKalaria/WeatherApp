@@ -1,123 +1,19 @@
 
-<h1>{{username}}</h1>
-
 <div ng-cloak="" style="margin: 100px;">
     <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4" md-row-height-gt-md="1:1"
-        md-row-height="2:2" md-gutter="30px" md-gutter-gt-sm="80px">
+        md-row-height="2:2" md-gutter="30px" md-gutter-gt-sm="80px" >
 
-        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" ng-repeat="city in myCities">
             <md-card style="width: 100%;height: inherit;">
-                <md-card-content>
-                    <div layout="column" layout-align="center center">
-                        <div flex="">City Nam</div>
-                        <div flex="">Image</div>
-                        <div flex="">Temperature</div>
-                        <div flex="">Min Max</div>
-                    </div>
-                </md-card-content>
+                <md-card-content style="height: inherit;" layout="column" layout-align="space-between stretch">
+                    <div style="background-color: lawngreen;" flex="15"><h2>{{city}}</h2></div>
+                    <div flex="45">Image</div>
+                    <div style="background-color: lawngreen;" flex="25">Temperature</div>
+                    <div flex="15">Min Max</div>
+  
+            </md-card-content>
 
             </md-card>
         </md-grid-tile>
-
-        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
-            <md-card style="width: 100%;height: inherit;">
-                <md-card-content>
-                    <div layout="column" layout-align="center center">
-                        <div flex="">City Nam</div>
-                        <div flex="">Image</div>
-                        <div flex="">Temperature</div>
-                        <div flex="">Min Max</div>
-                    </div>
-                </md-card-content>
-
-            </md-card>
-        </md-grid-tile>
-
-        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
-            <md-card style="width: 100%;height: inherit;">
-                <md-card-content>
-                    <div layout="column" layout-align="center center">
-                        <div flex="">City Nam</div>
-                        <div flex="">Image</div>
-                        <div flex="">Temperature</div>
-                        <div flex="">Min Max</div>
-                    </div>
-                </md-card-content>
-
-            </md-card>
-        </md-grid-tile>
-
-        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
-            <md-card style="width: 100%;height: inherit;">
-                <md-card-content>
-                    <div layout="column" layout-align="center center" style="width: 300px;">
-                        <div flex="">City Name</div>
-                        <div flex="">Image</div>
-                        <div flex="">Temperature</div>
-                        <div flex="">Min Max</div>
-                    </div>
-                </md-card-content>
-
-            </md-card>
-        </md-grid-tile>
-
-        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
-            <md-card style="width: 100%;height: inherit;">
-                <md-card-content>
-                    <div layout="column" layout-align="center center" style="width: 300px;">
-                        <div flex="">City Name</div>
-                        <div flex="">Image</div>
-                        <div flex="">Temperature</div>
-                        <div flex="">Min Max</div>
-                    </div>
-                </md-card-content>
-
-            </md-card>
-        </md-grid-tile>
-
-        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
-            <md-card style="width: 100%;height: inherit;">
-                <md-card-content>
-                    <div layout="column" layout-align="center center" style="width: 300px;">
-                        <div flex="">City Name</div>
-                        <div flex="">Image</div>
-                        <div flex="">Temperature</div>
-                        <div flex="">Min Max</div>
-                    </div>
-                </md-card-content>
-
-            </md-card>
-        </md-grid-tile>
-
-        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
-            <md-card style="width: 100%;height: inherit;">
-                <md-card-content>
-                    <div layout="column" layout-align="center center" style="width: 300px;">
-                        <div flex="">City Name</div>
-                        <div flex="">Image</div>
-                        <div flex="">Temperature</div>
-                        <div flex="">Min Max</div>
-                    </div>
-                </md-card-content>
-
-            </md-card>
-        </md-grid-tile>
-
-        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
-            <md-card style="width: 100%;height: inherit;">
-                <md-card-content>
-                    <div layout="column" layout-align="center center" style="width: 300px;">
-                        <div flex="">City Name</div>
-                        <div flex="">Image</div>
-                        <div flex="">Temperature</div>
-                        <div flex="">Min Max</div>
-                    </div>
-
-
-                </md-card-content>
-
-            </md-card>
-        </md-grid-tile>
-
     </md-grid-list>
 </div>
