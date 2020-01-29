@@ -14,14 +14,24 @@ var app = angular
         // controller: "registerController"
       })
 
+      .when("/register", {
+        templateUrl: "client/views/register.html"
+        // controller: "registerController"
+      })
+
+      .when("/register", {
+        templateUrl: "client/views/register.html"
+        // controller: "registerController"
+      })
+
       .when("/users/:username", {
         templateUrl: "client/views/dashboard.html",
-        controller: "userLoginController"
+        controller: "dashboard"
       })
 
       .when("/users/:username/sharedCities", {
         templateUrl: "client/views/shared-city.html",
-        controller: "sharedCityController"
+        controller: "sharedCity"
       })
 
       .otherwise({

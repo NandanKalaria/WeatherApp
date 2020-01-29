@@ -5,10 +5,9 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope" ,fu
     $scope.eid = null;
     $scope.pwd = null;
     $scope.loggedOut = true;
+    
 
     $scope.sharedCity = function(){
-      console.log("HI");
-      alert('/users/' + username + '/sharedCities');
       $location.path('/users/' + username + '/sharedCities')
     };
 
@@ -38,6 +37,7 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope" ,fu
 
       $scope.email = null;
       $scope.password = null;
+      $rootScope.username= null;
 
       $scope.loginUser = function(email, password){
 
@@ -49,9 +49,9 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope" ,fu
             
             loggedOut = false;
 
-            $rootScope.username=response.data[0].firstName;
+            username=response.data[0].firstName;
 
-            $location.path('/users/' + response.data[0].firstName)
+            $location.path('/users/' + username)
 
           }
 
