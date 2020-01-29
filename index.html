@@ -27,11 +27,13 @@
         </div>
     </header>
     <main >
-        <div>
-            <ng-view></ng-view>
+        
+        <div ng-controller="DemoCtrl">
+          <!--  <ng-view></ng-view>  -->
+          <ng-include src=" 'client/views/add-city.html' "></ng-include>
         </div>
+       
     </main>
-
     <!-- Angular Material requires Angular.js Libraries -->
 
 
@@ -55,6 +57,8 @@
     <script src="/client/controllers/login.js"></script>
     <script src="/client/controllers/nav.js"></script>
     <script src="/client/controllers/login.js"></script>
+    <script src="/client/controllers/dashboard.js"></script>
+    <script src="/client/controllers/search-city.js"></script>
 
 </body>
 

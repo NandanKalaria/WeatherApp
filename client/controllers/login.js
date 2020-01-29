@@ -1,4 +1,4 @@
-app.controller("myController", ["$scope", "$http", "$location", function ($scope, $http, $location){
+app.controller("myController", ["$scope", "$http", "$location", "$rootScope" ,function ($scope, $http, $location, $rootScope){
                 
     $scope.fname = null;
     $scope.lname = null;
@@ -49,7 +49,7 @@ app.controller("myController", ["$scope", "$http", "$location", function ($scope
             
             loggedOut = false;
 
-            $scope.username=response.data[0].firstName;
+            $rootScope.username=response.data[0].firstName;
 
             $location.path('/users/' + response.data[0].firstName)
 
