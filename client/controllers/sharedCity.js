@@ -1,6 +1,8 @@
-app.controller("sharedCity", function($scope, $routeParams, $http) {
+app.controller("sharedCity", function($scope, $routeParams, $http, $location) {
 
     $scope.username = $routeParams.username;
+
+    
 
     $http({
       method : "GET",
