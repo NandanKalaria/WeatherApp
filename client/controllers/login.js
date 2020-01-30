@@ -6,6 +6,15 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope" ,fu
     $scope.pwd = null;
     $rootScope.loggedOut = false;
 
+    $http({
+      method : "GET",
+        url : `https://api.openweathermap.org/data/2.5/weather?q=Vadodara&appid=4726981a49612e861cd023fbe81eb99d`
+    }).then(function mySuccess(response) {
+      console.log(response);
+    }, function myError(response) {
+      $scope.myWelcome = response.statusText;
+    });
+
 
     $scope.sharedCity = function(){
       $location.path('/users/' + username + '/sharedCities')
