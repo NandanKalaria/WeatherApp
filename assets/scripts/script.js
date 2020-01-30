@@ -19,11 +19,6 @@ var app = angular
         controller: "addCity"
       })
 
-      .when("/register", {
-        templateUrl: "client/views/register.html"
-        // controller: "registerController"
-      })
-
       .when("/users/:username", {
         templateUrl: "client/views/dashboard.html",
         controller: "dashboard"

@@ -15,6 +15,7 @@
 </head>
 
 <body ng-controller="myController">
+    <div>
     <header class="row" style="background-color: white;">
         <ng-include src=" 'client/views/sidenav.html' "></ng-include>
         <!--
@@ -29,11 +30,12 @@
     <main >
         
         <div>
-          <!-- <ng-view></ng-view>-->
-          <ng-include src=" 'client/views/add-city.html' "></ng-include>  
+           <ng-view></ng-view> 
+         <!-- <ng-include src=" 'client/views/add-city.html' "></ng-include>  -->
         </div>
        
     </main>
+</div>
     <!-- Angular Material requires Angular.js Libraries -->
 
 
@@ -61,6 +63,7 @@
     <script src="/client/controllers/search-city.js"></script>
     <script src="/client/controllers/addCity.js"></script>
     <script src="/client/controllers/sharedCity.js"></script>
+    <script src="/client/controllers/sessionController.js"></script>
     <script src="/client/services/sessionService.js"></script>
 </body>
 

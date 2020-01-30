@@ -10,7 +10,7 @@
                 <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i" ng-model='cityToAdd'>{{item.display}}</span>
               </md-item-template>
               <md-not-found>
-                No states matching "{{ctrl.searchText}}" were found.
+                No Cities matching "{{ctrl.searchText}}" were found.
                 <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
               </md-not-found>
             </md-autocomplete>
@@ -19,7 +19,10 @@
           </form>
           
         </md-content>
+        <md-button class="md-raised md-primary" ng-click="searchCity()">Search City</md-button>
+        <br>
         <md-button class="md-raised md-primary">Add City</md-button>
+
 
       </div>
     </div>

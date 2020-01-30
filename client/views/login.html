@@ -22,9 +22,9 @@
         </div>
       </div>
       <div>
-        <!--<a href="#!/{{email}}" style="padding: 20px 50px" class="btn btn-primary">Login</a>-->
-        <md-button class="md-raised md-primary" ng-click="loginUser(email, password)">Login</md-button>
+        <md-button class="md-raised md-primary" ng-click="loginUser(email, password); vm.setServiceSession()">Login</md-button>
       </div>
+      <pre>{{vm.model | json}}</pre>
     </div>
     <div class="grid-container-image">
 

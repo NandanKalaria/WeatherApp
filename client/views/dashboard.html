@@ -5,12 +5,12 @@
 
         <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" ng-repeat="city in myCities">
             <md-card style="width: 100%;height: inherit;">
-                <md-card-content style="height: inherit;" layout="column" layout-align="space-between stretch">
-                    <div style="background-color: lawngreen;" flex="15"><h2>{{city}}</h2></div>
-                    <div flex="45">Image</div>
-                    <div style="background-color: lawngreen;" flex="25">Temperature</div>
-                    <div flex="15">Min Max</div>
-  
+                <md-card-content style="height: inherit;" layout="column" layout-align="space-between center">
+                    <div flex="15"><h2>{{city.name}}</h2></div>
+                    <img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img>
+                    <div flex="25">Temperature<br>{{city.temp}}</div>
+                    <div flex="15">{{city.min}}{{city.max}}</div>
+    
             </md-card-content>
 
             </md-card>

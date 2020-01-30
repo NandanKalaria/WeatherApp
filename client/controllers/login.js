@@ -1,19 +1,9 @@
-app.controller("myController", ["$scope", "$http", "$location", "$rootScope" ,function ($scope, $http, $location, $rootScope){
+app.controller("myController", ["$scope", "$http", "$location", "$rootScope", function ($scope, $http, $location, $rootScope){
                 
     $scope.fname = null;
     $scope.lname = null;
     $scope.eid = null;
     $scope.pwd = null;
-    $rootScope.loggedOut = false;
-
-    $http({
-      method : "GET",
-        url : `https://api.openweathermap.org/data/2.5/weather?q=Vadodara&appid=4726981a49612e861cd023fbe81eb99d`
-    }).then(function mySuccess(response) {
-      console.log(response);
-    }, function myError(response) {
-      $scope.myWelcome = response.statusText;
-    });
 
 
     $scope.sharedCity = function(){
@@ -64,7 +54,6 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope" ,fu
       }).then(function mySuccess(response) {
           if(response.data[0].pwd==password){
             
-            loggedOut = false;
 
             username=response.data[0].firstName;
 
