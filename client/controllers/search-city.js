@@ -38,6 +38,7 @@
           return deferred.promise;
         } else {
           return results;
+          
         }
       }
   
@@ -46,6 +47,7 @@
       }
   
       function selectedItemChange(item) {
+        $scope.newCity = item.display;
         $log.info('Item changed to ' + JSON.stringify(item));
       }
   
@@ -57,9 +59,13 @@
                Vadodara, Boston, Chennai, Delhi, Kolkata, Tokyo, Rome, Berlin, Amsterdam, Surat, Madrid, Sydney, Venice';
   
         return allStates.split(/, +/g).map(function (state) {
+
+          
           return {
+
             value: state.toLowerCase(),
             display: state
+            
           };
         });
       }

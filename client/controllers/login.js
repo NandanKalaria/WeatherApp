@@ -48,26 +48,26 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", fu
 
       $scope.loginUser = function(email, password){
 
-      $http({
-        method : "GET",
-          url : `http://localhost:3000/users?email=${email}`
-      }).then(function mySuccess(response) {
-          if(response.data[0].pwd==password){
+          $http({
+            method : "GET",
+              url : `http://localhost:3000/users?email=${email}`
+          }).then(function mySuccess(response) {
+              if(response.data[0].pwd==password){
+                
+
+                username=response.data[0].firstName;
+
+                $location.path('/users/' + username)
+
+              }
+
+              else{
+                  alert("User ID or Password Incorrect.")
+              }
             
-
-            username=response.data[0].firstName;
-
-            $location.path('/users/' + username)
-
-          }
-
-          else{
-              alert("User ID or Password Incorrect.")
-          }
-        
-      }, function myError(response) {
-        $scope.users = response.statusText;
-      });  
+          }, function myError(response) {
+            $scope.users = response.statusText;
+          });  
     };
 
     

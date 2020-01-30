@@ -1,12 +1,8 @@
 app.controller('sessionController', [ 'sessionService',
 
-       function (sessionService) {
-          var vm = this;
-       },
-
        function sessionController(sessionService) {
         var vm = this;
-
+        
         vm.getServiceSession = function () {
 
             vm.model = {

@@ -1,4 +1,4 @@
-app.controller("dashboard", function($scope, $routeParams, $http) {
+app.controller("dashboard", function($scope, $routeParams, $http, $timeout) {
            
     $scope.username = $routeParams.username;
 
@@ -39,5 +39,8 @@ app.controller("dashboard", function($scope, $routeParams, $http) {
         $scope.myWelcome = response.statusText;
       }
     );
+
+
+    
     
   });
