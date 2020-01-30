@@ -11,6 +11,14 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope" ,fu
       $location.path('/users/' + username + '/sharedCities')
     };
 
+    $scope.addCity = function(){
+      $location.path('/users/' + username + '/addCity')
+    };
+
+    $scope.dashboard = function(){
+      $location.path('/users/' + username)
+    };
+
 
     
     $scope.adduser = function (fname, lname, eid, pwd){

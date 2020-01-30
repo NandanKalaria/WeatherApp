@@ -14,9 +14,9 @@ var app = angular
         // controller: "registerController"
       })
 
-      .when("/register", {
-        templateUrl: "client/views/register.html"
-        // controller: "registerController"
+      .when("/users/:username/addCity", {
+        templateUrl: "client/views/add-city.html",
+        controller: "addCity"
       })
 
       .when("/register", {
