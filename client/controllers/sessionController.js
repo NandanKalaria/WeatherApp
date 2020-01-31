@@ -5,15 +5,15 @@ app.controller('sessionController', [ 'sessionService',
         
         vm.getServiceSession = function () {
 
-            vm.model = {
-                email: sessionService.get('email'),
+            vm = {
+                mail: sessionService.get('mail'),
                 status: 'Retrieved by service on ' + new Date()
             };
         }
 
         vm.setServiceSession = function() { 
 
-            sessionService.save('email', vm.model.email);
+            sessionService.save('mail', vm.mail);
             vm.getServiceSession();
         
         

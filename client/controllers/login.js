@@ -1,4 +1,4 @@
-app.controller("myController", ["$scope", "$http", "$location", "$rootScope", function ($scope, $http, $location, $rootScope){
+app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "sessionService", function ($scope, $http, $location, $rootScope, sessionService){
                 
     $scope.fname = null;
     $scope.lname = null;
@@ -46,7 +46,10 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", fu
       $scope.password = null;
       $rootScope.username= null;
 
+
+
       $scope.loginUser = function(email, password){
+
 
           $http({
             method : "GET",
@@ -54,6 +57,9 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", fu
           }).then(function mySuccess(response) {
               if(response.data[0].pwd==password){
                 
+                
+
+
 
                 username=response.data[0].firstName;
 

@@ -31,6 +31,9 @@
         console.log(response);
         
       },
+
+
+
       function myError(response) {
         $scope.myWelcome = response.statusText;
       }
@@ -78,7 +81,7 @@
         };
       });
     }
-
+    
     /**
      * Create filter function for a query string
      */
