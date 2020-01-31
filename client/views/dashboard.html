@@ -15,27 +15,46 @@
         <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" ng-repeat="city in myCities">
             <md-card style="width: 100%;height: inherit;">
                 <md-card-content style="height: inherit;" layout="column" layout-align="space-between center">
+                    <div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak>
+                    <md-icon ng-click="ctrl.openDialog($event)" class="md-raised" md-svg-icon="/assets/img/share.svg"></md-icon>
+                    </div>
                     <div flex="15"><h2>{{city.name}}</h2></div>
                     <img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img>
-                    <div flex="25">Temperature<br>{{city.temp}}</div>
-                    <div flex="15">{{city.min}}{{city.max}}</div>
+                    <div flex="25"><h3>{{city.temp}}</h3></div>
+                    <div flex="15" layout="row" layout-align="center center">
+                        <div flex="40"><h3 style="color: skyblue;">{{city.min}}</h3></div>
+                        <div flex="20"></div>
+                        <div flex="40"><h3 style="color: red;">{{city.max}}<h3></div>
+                    </div>
     
             </md-card-content>
 
             </md-card>
         </md-grid-tile>
+
+        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+            <md-card style="width: 100%;height: inherit;">
+                <md-card-content ng-click="ctrl.openDialog($event)" layout="row" layout-align="center center">
+                        <img  style="height: inherit;" ng-src="/assets/img/plus.svg"></img>
+            </md-card-content>
+
+            </md-card>
+        </md-grid-tile>
+
     </md-grid-list>
     <div ng-if="toggle" class = "vrepeatContainer" ng-controller = "vrepeatController as ctrl"
          ng-cloak>
          <md-content layout = "column">
             <md-virtual-repeat-container md-auto-shrink id = "vertical-container">
-               <div layout="row" layout-align="space-between center" md-virtual-repeat = "city in myCities"
+               <div layout="row" layout-align="center center" md-virtual-repeat = "city in myCities"
                   class = "repeated-item-vertical" >
-                  <div flex="20" style="height: inherit;"><h2>{{city.name}}</h2></div>
-                 <div flex="40" style="height: inherit;"><img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img></div> 
-                  <div flex="20" style="height: inherit;">Temperature<br>{{city.temp}}</div>
-                  <div flex="10" style="height: inherit">Min{{city.min}}</div>
-                  <div flex="10" style="height: inherit;">Max{{city.max}}</div>
+                  
+                  <div flex="20" style="align-items: center;justify-content: center;"><h2>{{city.name}}</h2></div>
+                 <div flex="35" style="align-items: center;justify-content: center;"><img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img></div> 
+                  <div flex="15" style="align-items: center;justify-content: center;"><h3>{{city.temp}}</h3></div>
+                  <div flex="15" style="align-items: center;justify-content: center; color: skyblue;"><h3>Min&nbsp;{{city.min}}</h3></div>
+                  <div flex="15" style="align-items: center;justify-content: center; color: red;"><h3>Max&nbsp;{{city.max}}</h3></div>
+                  <md-icon ng-click="ctrl.openDialog($event)" md-svg-icon="/assets/img/share.svg"></md-icon>
                   
                </div></div>
             </md-virtual-repeat-container>

@@ -20,10 +20,24 @@
 
   function DialogCtrl ($timeout, $q, $scope, $mdDialog, $http) {
 
+    var allcities="";
+
+    $http({
+      method: "GET",
+      url: `http://localhost:3000/usernames`
+    }).then(
+      function mySuccess(response) {
+
+        console.log(response);
+        
+      },
+      function myError(response) {
+        $scope.myWelcome = response.statusText;
+      }
+    );
+
 
     var self = this;
-
-
     // list of `state` value/display objects
     self.states        = loadAll();
     self.querySearch   = querySearch;
@@ -55,8 +69,7 @@
      * Build `states` list of key/value pairs
      */
     function loadAll() {
-      var allStates = 'Dubai, London, Bangkok, Paris, Singapore, New York, Honk Kong, Barcelona, Bali, Istanbul, Phuket, Qatar,\
-      Vadodara, Boston, Chennai, Delhi, Kolkata, Tokyo, Rome, Berlin, Amsterdam, Surat, Madrid, Sydney, Venice';
+      var allStates = 'Nandan, Tony, Steve, Bruce, Clark, Pepper';
 
       return allStates.split(/, +/g).map(function (state) {
         return {

@@ -11,7 +11,6 @@ app.controller("dashboard", function($scope, $routeParams, $http, $timeout) {
       function mySuccess(response) {
         $scope.mine = response.data[0].cities;
         $scope.mine.forEach(element => {
-          console.log(element);
           $http({
             method: "GET",
             url: `https://api.openweathermap.org/data/2.5/weather?q=${element}&appid=4726981a49612e861cd023fbe81eb99d`
@@ -26,7 +25,6 @@ app.controller("dashboard", function($scope, $routeParams, $http, $timeout) {
             
               $scope.myCities.push(City);
   
-              console.log(City);
               
             },
             function myError(response) {
