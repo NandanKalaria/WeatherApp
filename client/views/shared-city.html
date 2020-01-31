@@ -10,7 +10,7 @@
 <br>
 <br>
 
-  <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4" md-row-height-gt-md="1:1"
+  <md-grid-list ng-if="!toggle" md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4" md-row-height-gt-md="1:1"
       md-row-height="2:2" md-gutter="30px" md-gutter-gt-sm="80px">
 
       <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" ng-repeat="city in sharedCities">
@@ -27,4 +27,23 @@
     </md-grid-tile>
 
   </md-grid-list>
+
+  <div ng-if="toggle" class = "vrepeatContainer" ng-controller = "vrepeatController as ctrl"
+         ng-cloak>
+         <md-content layout = "column">
+            <md-virtual-repeat-container md-auto-shrink id = "vertical-container">
+               <div layout="row" layout-align="space-between center" md-virtual-repeat = "city in sharedCities"
+                  class = "repeated-item-vertical" >
+                  <div flex="20" style="height: inherit;"><h2>{{city.name}}</h2></div>
+                 <div flex="40" style="height: inherit;"><img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img></div> 
+                  <div flex="20" style="height: inherit;">Temperature<br>{{city.temp}}</div>
+                  <div flex="10" style="height: inherit">Min{{city.min}}</div>
+                  <div flex="10" style="height: inherit;">Max{{city.max}}</div>
+                  
+               </div></div>
+            </md-virtual-repeat-container>
+            
+         </md-content>
+      </div>
+
 </div>
