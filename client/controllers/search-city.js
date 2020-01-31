@@ -47,7 +47,7 @@
       }
   
       function selectedItemChange(item) {
-        $scope.newCity = item.display;
+        
         $log.info('Item changed to ' + JSON.stringify(item));
       }
   
