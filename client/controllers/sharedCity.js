@@ -1,11 +1,11 @@
-app.controller("sharedCity", function($scope, $routeParams, $http, $location) {
+app.controller("sharedCity", function($scope, $routeParams, $http, $location, $window) {
   $scope.username = $routeParams.username;
 
   $scope.sharedCities = [];
 
   $http({
     method: "GET",
-    url: `http://localhost:3000/users?firstName=${username}`
+    url: `http://localhost:3000/users?firstName=${$window.sessionStorage.uname}`
   }).then(
     function mySuccess(response) {
       $scope.shared = response.data[0].shared;

@@ -18,7 +18,7 @@
     };
   }
 
-  function DialogCtrl($timeout, $q, $scope, $mdDialog, $http) {
+  function DialogCtrl($timeout, $q, $scope, $mdDialog, $http, $window) {
 
 
     var self = this;
@@ -37,9 +37,7 @@
     };
     self.finish = function ($event, city) {
 
-
-      console.log(username);
-      $http.get(`http://localhost:3000/users?firstName=${username}`)
+      $http.get(`http://localhost:3000/users?firstName=${$window.sessionStorage.uname}`)
         .then(function (response) {
           var cityArr = response.data[0].cities;
           console.log(cityArr);

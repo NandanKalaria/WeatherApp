@@ -1,4 +1,4 @@
-app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "sessionService", function ($scope, $http, $location, $rootScope, sessionService) {
+app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$window",  function ($scope, $http, $location, $rootScope, $window) {
 
   $scope.fname = null;
   $scope.lname = null;
@@ -8,16 +8,21 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "s
 
 
   $scope.sharedCity = function () {
-    $location.path('/users/' + username + '/sharedCities')
+    $location.path('/users/' + $window.sessionStorage.uname + '/sharedCities')
   };
 
   $scope.addCity = function () {
-    $location.path('/users/' + username + '/addCity')
+    $location.path('/users/' + $window.sessionStorage.uname + '/addCity')
   };
 
   $scope.dashboard = function () {
-    $location.path('/users/' + username)
+    $location.path('/users/' + $window.sessionStorage.uname)
   };
+
+  $scope.logout = function () {
+    $window.sessionStorage.uname = "";
+    console.log($window.sessionStorage.uname);
+  }
 
 
 
@@ -54,10 +59,7 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "s
         .then(function (response) {
           console.log(response);
 
-          $scope.fname = "";
-          $scope.lname = "";
-          $scope.eid = "";
-          $scope.pwd = "";
+          alert("Your sign up is complete!")
 
         }, function (error) {
           console.log(error);
@@ -71,7 +73,7 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "s
 
   $scope.email = null;
   $scope.password = null;
-  $rootScope.username = null;
+  $rootScope.username = $window.sessionStorage.uname;
 
 
 
@@ -86,10 +88,10 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "s
       console.log(response.data);
       if (response.data[0].pwd == password) {
 
-        username = response.data[0].firstName;
-        console.log(username);
+        $window.sessionStorage.uname = response.data[0].firstName;
+        console.log($window.sessionStorage.uname);
 
-        $location.path('/users/' + username)
+        $location.path('/users/' + $window.sessionStorage.uname)
 
       } else {
         alert("User ID or Password Incorrect.")

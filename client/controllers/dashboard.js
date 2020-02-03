@@ -1,4 +1,4 @@
-app.controller("dashboard", function($scope, $routeParams, $http, $timeout) {
+app.controller("dashboard", function($scope, $routeParams, $http, $timeout, $window) {
            
     $scope.username = $routeParams.username;
 
@@ -6,7 +6,7 @@ app.controller("dashboard", function($scope, $routeParams, $http, $timeout) {
 
     $http({
       method: "GET",
-      url: `http://localhost:3000/users?firstName=${username}`
+      url: `http://localhost:3000/users?firstName=${$window.sessionStorage.uname}`
     }).then(
       function mySuccess(response) {
         $scope.mine = response.data[0].cities;
