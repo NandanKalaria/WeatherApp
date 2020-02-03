@@ -16,7 +16,7 @@
             <md-card style="width: 100%;height: inherit;">
                 <md-card-content style="height: inherit;" layout="column" layout-align="space-between center">
                     <div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak>
-                    <md-icon ng-click="ctrl.openDialog($event)" class="md-raised" md-svg-icon="/assets/img/share.svg"></md-icon>
+                    <md-icon ng-click="ctrl.openDialog($event, city.name)" class="md-raised" md-svg-icon="/assets/img/share.svg"></md-icon>
                     </div>
                     <div flex="15"><h2>{{city.name}}</h2></div>
                     <img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img>
@@ -34,10 +34,11 @@
 
         <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
             <md-card style="width: 100%;height: inherit;">
-                <md-card-content ng-click="ctrl.openDialog($event)" layout="row" layout-align="center center">
-                        <img  style="height: inherit;" ng-src="/assets/img/plus.svg"></img>
-            </md-card-content>
-
+                <div ng-controller="AddCtrl as ctrl" layout="column" ng-cloak>
+                    <md-card-content ng-click="ctrl.openDialog($event)" layout="row" layout-align="center center">
+                        <img style="height: inherit;" ng-src="/assets/img/plus.svg"></img>
+                    </md-card-content>
+                </div>
             </md-card>
         </md-grid-tile>
 
@@ -54,7 +55,10 @@
                   <div flex="15" style="align-items: center;justify-content: center;"><h3>{{city.temp}}</h3></div>
                   <div flex="15" style="align-items: center;justify-content: center; color: skyblue;"><h3>Min&nbsp;{{city.min}}</h3></div>
                   <div flex="15" style="align-items: center;justify-content: center; color: red;"><h3>Max&nbsp;{{city.max}}</h3></div>
-                  <md-icon ng-click="ctrl.openDialog($event)" md-svg-icon="/assets/img/share.svg"></md-icon>
+                  <div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak>
+                    <md-icon ng-click="ctrl.openDialog($event, city.name)" md-svg-icon="/assets/img/share.svg">
+                    </md-icon>
+                </div>
                   
                </div></div>
             </md-virtual-repeat-container>

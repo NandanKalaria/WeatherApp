@@ -1,41 +1,83 @@
 (function () {
   'use strict';
-  
-      app.controller('DemoCtrl', DemoCtrl);
+
+  app.controller('AddCtrl', DemoCtrl);
 
   function DemoCtrl($mdDialog) {
     var self = this;
 
-    self.openDialog = function($event) {
+    self.openDialog = function ($event) {
       $mdDialog.show({
         controller: DialogCtrl,
         controllerAs: 'ctrl',
-        templateUrl: '/client/views/share-pop.html',
+        templateUrl: '/client/views/add-city.html',
         parent: angular.element(document.body),
         targetEvent: $event,
-        clickOutsideToClose:true
+        clickOutsideToClose: true
       });
     };
   }
 
-  function DialogCtrl ($timeout, $q, $scope, $mdDialog, $http) {
+  function DialogCtrl($timeout, $q, $scope, $mdDialog, $http) {
 
 
     var self = this;
 
 
     // list of `state` value/display objects
-    self.states        = loadAll();
-    self.querySearch   = querySearch;
+    self.states = loadAll();
+    self.querySearch = querySearch;
 
     // ******************************
     // Template methods
     // ******************************
 
-    self.cancel = function($event) {
+    self.cancel = function ($event) {
       $mdDialog.cancel();
     };
-    self.finish = function($event) {
+    self.finish = function ($event, city) {
+
+
+      console.log(username);
+      $http.get(`http://localhost:3000/users?firstName=${username}`)
+        .then(function (response) {
+          var cityArr = response.data[0].cities;
+          console.log(cityArr);
+          cityArr.push(city);
+          console.log(cityArr);
+
+          var fname = response.data[0].firstName;
+          var lname = response.data[0].lastName;
+          var eid = response.data[0].email;
+          var pwd = response.data[0].pwd;
+          var cities = cityArr;
+          var shared = response.data[0].shared;
+          var id = response.data[0].id;
+          console.log(id);
+
+          var data = {
+            firstName: fname,
+            lastName: lname,
+            email: eid,
+            pwd: pwd,
+            cities: cities,
+            shared: shared
+          }
+
+
+
+          $http.put(`http://localhost:3000/users/${id}`, JSON.stringify(data))
+            .then(function (response) {
+              console.log(response);
+            }, function (error) {
+              console.log(error);
+
+            })
+        }, function (error) {
+          console.log(error);
+
+        })
+
       $mdDialog.hide();
     };
 
@@ -47,7 +89,7 @@
      * Search for states... use $timeout to simulate
      * remote dataservice call.
      */
-    function querySearch (query) {
+    function querySearch(query) {
       return query ? self.states.filter(createFilterFor(query)) : self.states;
     }
 
@@ -79,4 +121,3 @@
     }
   }
 })();
-
