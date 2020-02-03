@@ -10,15 +10,15 @@
 <br>
 <br>
 
-  <md-grid-list ng-if="!toggle" md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4" md-row-height-gt-md="1:1"
-      md-row-height="2:2" md-gutter="30px" md-gutter-gt-sm="80px">
+  <md-grid-list ng-if="!toggle" md-cols-xs="1" md-cols-sm="1" md-cols-md="2" md-cols-gt-md="3" md-row-height-gt-md="1:1"
+      md-row-height="2:2" md-gutter="20px" md-gutter-gt-sm="80px">
 
       <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" ng-repeat="city in sharedCities">
-        <md-card style="width: 100%;height: inherit;">
+        <md-card class="card">
             <md-card-content style="height: inherit;" layout="column" layout-align="space-between center">
                 <div flex="15" class="name">{{city.name}}</div>
                 <img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img>
-                <div flex="25" class="temp">Temperature<br>{{city.temp}}</div>
+                <div flex="25" class="temp">{{city.temp}}</div>
                 <div flex="15" layout="row" layout-align="center center">
                   <div flex="40" class="min">{{city.min}}</div>
                   <div flex="20"></div>

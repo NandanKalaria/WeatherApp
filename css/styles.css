@@ -73,6 +73,10 @@ body {
 .card-bg {
   background-color: linear-gradient(to right, #5499C7, #A2D9CE);
 }
+.card {
+  width: 300px;
+  height: 350px;
+}
 .min {
   color: skyblue;
   font-size: x-large;
