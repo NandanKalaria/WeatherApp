@@ -59,8 +59,6 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
         .then(function (response) {
           console.log(response);
 
-          alert("Your sign up is complete!")
-
         }, function (error) {
           console.log(error);
 

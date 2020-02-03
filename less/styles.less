@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: inherit; }
 
-body {
+main, body {
   background-image: linear-gradient(to right,#5499C7, #A2D9CE); 
   overflow-x:hidden;
 }
@@ -63,14 +63,43 @@ body {
 }	  
 
 
-.share{
+.login{
   position:fixed;
   top: 50%;
   left: 50%;
-  width:60em;
-  height:40em;
-  margin-top: -20em; /*set to a negative number 1/2 of your height*/
-  margin-left: -30em; /*set to a negative number 1/2 of your width*/
+  width:80rem;
+  height:40rem;
+  margin-top: -15rem; /*set to a negative number 1/2 of your height*/
+  margin-left: -40rem; /*set to a negative number 1/2 of your width*/
   border: 1px solid #ccc;
-  background-color: #f3f3f3;
+}
+
+.card-bg{
+  background-color: linear-gradient(to right,#5499C7, #A2D9CE); 
+}
+
+.min{
+  color: skyblue;
+  font-size: x-large;
+  
+}
+
+.max{
+  color: red;
+  font-size: x-large;
+}
+
+.temp{
+  color: black;
+  font-size: x-large;
+}
+
+.name{
+  color: black;
+  font-size: xx-large;
+}
+
+.center{
+  align-items: center;
+  justify-content: center;
 }

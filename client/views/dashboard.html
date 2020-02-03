@@ -18,13 +18,13 @@
                     <div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak>
                     <md-icon ng-click="ctrl.openDialog($event, city.name)" class="md-raised" md-svg-icon="/assets/img/share.svg"></md-icon>
                     </div>
-                    <div flex="15"><h2>{{city.name}}</h2></div>
+                    <div flex="15" class="name">{{city.name}}</div>
                     <img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img>
-                    <div flex="25"><h3>{{city.temp}}</h3></div>
+                    <div flex="25" class="temp">{{city.temp}}</div>
                     <div flex="15" layout="row" layout-align="center center">
-                        <div flex="40"><h3 style="color: skyblue;">{{city.min}}</h3></div>
+                        <div flex="40" class="min">{{city.min}}</div>
                         <div flex="20"></div>
-                        <div flex="40"><h3 style="color: red;">{{city.max}}<h3></div>
+                        <div flex="40" class="max">{{city.max}}</div>
                     </div>
     
             </md-card-content>
@@ -50,11 +50,11 @@
                <div layout="row" layout-align="center center" md-virtual-repeat = "city in myCities"
                   class = "repeated-item-vertical" >
                   
-                  <div flex="20" style="align-items: center;justify-content: center;"><h2>{{city.name}}</h2></div>
-                 <div flex="35" style="align-items: center;justify-content: center;"><img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img></div> 
-                  <div flex="15" style="align-items: center;justify-content: center;"><h3>{{city.temp}}</h3></div>
-                  <div flex="15" style="align-items: center;justify-content: center; color: skyblue;"><h3>Min&nbsp;{{city.min}}</h3></div>
-                  <div flex="15" style="align-items: center;justify-content: center; color: red;"><h3>Max&nbsp;{{city.max}}</h3></div>
+                  <div flex="20" class="name center" >{{city.name}}</div>
+                 <div flex="35"  class="center"><img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img></div> 
+                  <div flex="15" class="temp center" >{{city.temp}}</div>
+                  <div flex="15" class="min center" >Min&nbsp;{{city.min}}</div>
+                  <div flex="15" class="max center" >Max&nbsp;{{city.max}}</div>
                   <div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak>
                     <md-icon ng-click="ctrl.openDialog($event, city.name)" md-svg-icon="/assets/img/share.svg">
                     </md-icon>

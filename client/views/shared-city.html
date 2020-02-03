@@ -16,10 +16,14 @@
       <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" ng-repeat="city in sharedCities">
         <md-card style="width: 100%;height: inherit;">
             <md-card-content style="height: inherit;" layout="column" layout-align="space-between center">
-                <div flex="15"><h2>{{city.name}}</h2></div>
+                <div flex="15" class="name">{{city.name}}</div>
                 <img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img>
-                <div flex="25">Temperature<br>{{city.temp}}</div>
-                <div flex="15">{{city.min}}{{city.max}}</div>
+                <div flex="25" class="temp">Temperature<br>{{city.temp}}</div>
+                <div flex="15" layout="row" layout-align="center center">
+                  <div flex="40" class="min">{{city.min}}</div>
+                  <div flex="20"></div>
+                  <div flex="40" class="max">{{city.max}}</div>
+              </div>
 
         </md-card-content>
 
@@ -34,11 +38,11 @@
             <md-virtual-repeat-container md-auto-shrink id = "vertical-container">
                <div layout="row" layout-align="space-between center" md-virtual-repeat = "city in sharedCities"
                   class = "repeated-item-vertical" >
-                  <div flex="20" style="height: inherit;"><h2>{{city.name}}</h2></div>
-                 <div flex="40" style="height: inherit;"><img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img></div> 
-                  <div flex="20" style="height: inherit;">Temperature<br>{{city.temp}}</div>
-                  <div flex="10" style="height: inherit">Min{{city.min}}</div>
-                  <div flex="10" style="height: inherit;">Max{{city.max}}</div>
+                  <div flex="20" class="name center"><h2>{{city.name}}</h2></div>
+                 <div flex="40" class="center"><img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img></div> 
+                  <div flex="20" class="temp center">{{city.temp}}</div>
+                  <div flex="10" class="min center">Min&nbsp;{{city.min}}</div>
+                  <div flex="10" class="max center">Max&nbsp;{{city.max}}</div>
                   
                </div></div>
             </md-virtual-repeat-container>
