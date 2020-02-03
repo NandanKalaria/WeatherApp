@@ -31,17 +31,20 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "s
       method: "GET",
       url: `http://localhost:3000/users`
     }).then(function mySuccess(response) {
-      console.log((response.data).length);
+      console.log(response.data);
+
+      var cities = ["Vadodara"];
+      var shared = ["Boston"];
 
       var data = {
 
         id: ((response.data).length) + 1,
-        fname: fname,
-        lname: lname,
-        eid: eid,
+        firstName: fname,
+        lastName: lname,
+        email: eid,
         pwd: pwd,
-        cities: null,
-        shared: null,
+        cities: cities,
+        shared: shared,
 
 
 
@@ -50,6 +53,12 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "s
       $http.post("http://localhost:3000/users", JSON.stringify(data))
         .then(function (response) {
           console.log(response);
+
+          $scope.fname = "";
+          $scope.lname = "";
+          $scope.eid = "";
+          $scope.pwd = "";
+
         }, function (error) {
           console.log(error);
 
@@ -73,6 +82,8 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "s
       method: "GET",
       url: `http://localhost:3000/users?email=${email}`
     }).then(function mySuccess(response) {
+
+      console.log(response.data);
       if (response.data[0].pwd == password) {
 
         username = response.data[0].firstName;
