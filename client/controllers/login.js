@@ -5,7 +5,7 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
   $scope.eid = null;
   $scope.pwd = null;
   $scope.log= true;
-
+  $rootScope.username = $window.sessionStorage.uname;
 
 
 

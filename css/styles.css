@@ -8,6 +8,7 @@
 main,
 body {
   background-image: linear-gradient(to right, #5499C7, #A2D9CE);
+  font-family: 'Muli', sans-serif;
   overflow-x: hidden;
 }
 .logo {
@@ -17,17 +18,18 @@ body {
   margin: auto 0;
 }
 .grid-container {
-  margin: 0 auto;
-  position: absolute;
-  left: 50%;
+  position: fixed;
   top: 50%;
-  margin-left: -40rem;
-  margin-top: -20rem;
+  left: 50%;
   background-color: white;
   display: grid;
-  width: 80rem;
-  height: 40rem;
-  grid-template-columns: minmax(200px, 2fr) minmax(200px, 5fr);
+  width: 80vw;
+  height: 60vh;
+  margin-top: -20vh;
+  /*set to a negative number 1/2 of your height*/
+  margin-left: -40vw;
+  /*set to a negative number 1/2 of your width*/
+  grid-template-columns: minmax(200px, 3fr) minmax(200px, 5fr);
 }
 .grid-container-image {
   background-image: url(/assets/img/login-hero.jpeg);
@@ -43,17 +45,17 @@ body {
   align-self: center;
 }
 .vrepeatContainer #vertical-container {
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 .vrepeatContainer .repeated-item-vertical {
   border-bottom: 1px solid #ddd;
   box-sizing: border-box;
-  height: 200px;
+  height: 10vw;
   padding: 20px ;
 }
 .vrepeatContainer md-content {
-  margin: 16px;
+  margin: 5vw;
 }
 .vrepeatContainer md-virtual-repeat-container {
   border: solid 1px white;
@@ -62,13 +64,12 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 80rem;
-  height: 40rem;
-  margin-top: -15rem;
+  width: 40rem;
+  height: 20rem;
+  margin-top: -35vh;
   /*set to a negative number 1/2 of your height*/
-  margin-left: -40rem;
+  margin-left: -20vw;
   /*set to a negative number 1/2 of your width*/
-  border: 1px solid #ccc;
 }
 .card-bg {
   background-color: linear-gradient(to right, #5499C7, #A2D9CE);
@@ -77,23 +78,42 @@ body {
   width: 300px;
   height: 350px;
 }
+.card-font {
+  font-size: x-large;
+}
+.card-img {
+  height: 100px;
+  width: 100px;
+}
+.list-font {
+  font-size: 1.6vw;
+}
+.list-img {
+  height: 6vw;
+  align-self: center;
+  justify-self: center;
+}
 .min {
   color: skyblue;
-  font-size: x-large;
 }
 .max {
   color: red;
-  font-size: x-large;
 }
 .temp {
   color: black;
-  font-size: x-large;
 }
 .name {
   color: black;
-  font-size: xx-large;
 }
 .center {
   align-items: center;
   justify-content: center;
+}
+.inputdemoErrors .inputErrorsApp {
+  min-height: 48px;
+}
+.inputdemoErrors md-input-container > p {
+  font-size: 0.8em;
+  text-align: left;
+  width: 100%;
 }
