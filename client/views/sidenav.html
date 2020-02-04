@@ -22,14 +22,14 @@
           <md-divider></md-divider>
         </md-list-item>
 
-        <a style="text-decoration: none;" href="#/" ng-click="toggleLeft(); logout()">
-          <md-list-item class="md-3-line">
+       
+          <md-list-item class="md-3-line" ng-click="toggleLeft(); logout()">
             <div class="md-list-item-text">
               <h3>Logout</h3>
             </div>
             <md-divider></md-divider>
           </md-list-item>
-        </a>
+        
       </md-list>
       </md-content>
       <md-button ng-click="toggleLeft()" class="md-accent">
@@ -40,7 +40,7 @@
     </md-sidenav>
 
     <md-content flex layout-padding>
-      <md-button style="margin-left: 20px;" ng-click="toggleLeft()" class="md-icon-button md-primary" aria-label="Settings">
+      <md-button ng-disabed="log" style="margin-left: 20px;" ng-click="toggleLeft()" class="md-icon-button md-primary" aria-label="Settings">
         <md-icon md-svg-icon="/assets/img/nav.svg"></md-icon>
       </md-button>
 </div>

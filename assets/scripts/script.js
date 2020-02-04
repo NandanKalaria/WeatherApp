@@ -1,5 +1,5 @@
 var app = angular
-  .module("Weather", ["ngRoute", "ngMaterial"])
+  .module("Weather", ["ngRoute", "ngMaterial", "ngMessages"])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider.caseInsensitiveMatch = true;
 

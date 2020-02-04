@@ -18,11 +18,11 @@
             <md-card-content style="height: inherit;" layout="column" layout-align="space-between center">
                 <div flex="15" class="name">{{city.name}}</div>
                 <img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img>
-                <div flex="25" class="temp">{{city.temp}}</div>
-                <div flex="15" layout="row" layout-align="center center">
-                  <div flex="40" class="min">{{city.min}}</div>
-                  <div flex="20"></div>
-                  <div flex="40" class="max">{{city.max}}</div>
+                <div flex="25" class="temp">{{city.temp}}&#8451;</div>
+                <div flex="15" style="width: 100%; text-align: center;" layout="row" layout-align="center center">
+                  <div flex="45" class="min">{{city.min}}&#8451;</div>
+                  <div flex="10"></div>
+                  <div flex="45" class="max">{{city.max}}&#8451;</div>
               </div>
 
         </md-card-content>
@@ -40,9 +40,9 @@
                   class = "repeated-item-vertical" >
                   <div flex="20" class="name center"><h2>{{city.name}}</h2></div>
                  <div flex="40" class="center"><img ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img></div> 
-                  <div flex="20" class="temp center">{{city.temp}}</div>
-                  <div flex="10" class="min center">Min&nbsp;{{city.min}}</div>
-                  <div flex="10" class="max center">Max&nbsp;{{city.max}}</div>
+                  <div flex="20" class="temp center">{{city.temp}}&#8451;</div>
+                  <div flex="10" class="min center">Min&nbsp;{{city.min}}&#8451;</div>
+                  <div flex="10" class="max center">Max&nbsp;{{city.max}}&#8451;</div>
                   
                </div></div>
             </md-virtual-repeat-container>

@@ -19,9 +19,9 @@ app.controller("sharedCity", function($scope, $routeParams, $http, $location, $w
             var City={name:"", icon:"", temp:"", min:"", max:""}
             City.name=response.data.name;
             City.icon=response.data.weather[0].main;
-            City.temp=response.data.main.temp;
-            City.min=response.data.main.temp_min;
-            City.max=response.data.main.temp_max;
+            City.temp=parseInt(response.data.main.temp)-273;
+            City.min=parseInt(response.data.main.temp_min)-273;
+            City.max=parseInt(response.data.main.temp_max)-273;
           
             $scope.sharedCities.push(City);
 

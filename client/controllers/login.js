@@ -4,6 +4,9 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
   $scope.lname = null;
   $scope.eid = null;
   $scope.pwd = null;
+  $scope.log= true;
+
+
 
 
 
@@ -21,7 +24,7 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
 
   $scope.logout = function () {
     $window.sessionStorage.uname = "";
-    console.log($window.sessionStorage.uname);
+    $location.path('/')
   }
 
 
@@ -38,8 +41,8 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
     }).then(function mySuccess(response) {
       console.log(response.data);
 
-      var cities = ["Vadodara"];
-      var shared = ["Boston"];
+      var cities = [];
+      var shared = [];
 
       var data = {
 
@@ -87,7 +90,6 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
       if (response.data[0].pwd == password) {
 
         $window.sessionStorage.uname = response.data[0].firstName;
-        console.log($window.sessionStorage.uname);
 
         $location.path('/users/' + $window.sessionStorage.uname)
 
