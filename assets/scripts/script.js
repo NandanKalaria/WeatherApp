@@ -5,29 +5,25 @@ var app = angular
 
     $routeProvider
 
-      .when("/", {
-        templateUrl: "client/views/login.html"
-        //controller: "loginController"
-      })
-      .when("/register", {
-        templateUrl: "client/views/register.html"
-        // controller: "registerController"
-      })
+    .when("/", {
+      templateUrl: "client/views/login.html"
+      //controller: "loginController"
+    })
+    .when("/register", {
+      templateUrl: "client/views/register.html"
+      // controller: "registerController"
+    })
 
-      .when("/users/:username/addCity", {
-        templateUrl: "client/views/add-city.html",
-        controller: "addCity"
-      })
 
-      .when("/users/:username", {
-        templateUrl: "client/views/dashboard.html",
-        controller: "dashboard"
-      })
+    .when("/users/:username", {
+      templateUrl: "client/views/dashboard.html",
+      controller: "dashboard"
+    })
 
-      .when("/users/:username/sharedCities", {
-        templateUrl: "client/views/shared-city.html",
-        controller: "sharedCity"
-      })
+    .when("/users/:username/sharedCities", {
+      templateUrl: "client/views/shared-city.html",
+      controller: "sharedCity"
+    })
 
       .otherwise({
         redirectTo: "/"

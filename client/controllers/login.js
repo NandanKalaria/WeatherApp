@@ -14,13 +14,10 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
     $location.path('/users/' + $window.sessionStorage.uname + '/sharedCities')
   };
 
-  $scope.addCity = function () {
-    $location.path('/users/' + $window.sessionStorage.uname + '/addCity')
-  };
-
   $scope.dashboard = function () {
     $location.path('/users/' + $window.sessionStorage.uname)
   };
+
 
   $scope.logout = function () {
     $window.sessionStorage.uname = "";

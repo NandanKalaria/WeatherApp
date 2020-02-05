@@ -1,4 +1,4 @@
-app.controller("dashboard", function($scope, $location, $routeParams, $http, $timeout, $window) {
+app.controller("dashboard", function($scope, $location, $routeParams, $http, $timeout, $window, $rootScope) {
            
     $scope.username = $routeParams.username;
 

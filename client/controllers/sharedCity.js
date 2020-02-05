@@ -1,4 +1,4 @@
-app.controller("sharedCity", function($scope, $routeParams, $http, $location, $window) {
+app.controller("sharedCity", function($scope, $routeParams, $http, $location, $window, $rootScope) {
   $scope.username = $routeParams.username;
 
   if($window.sessionStorage.uname==''){
