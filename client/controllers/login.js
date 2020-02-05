@@ -28,9 +28,15 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
     $location.path('/')
   }
 
-
+  $scope.regStatus = null;
 
   $scope.adduser = function (fname, lname, eid, pwd) {
+
+    if(fname == null || lname == null || eid == null || pwd == null){
+      $scope.regStatus = "All fields are required";
+    }
+
+    else{
 
     var len = 0;
 
@@ -54,14 +60,12 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
         pwd: pwd,
         cities: cities,
         shared: shared,
-
-
-
       };
 
       $http.post("http://localhost:3000/users", JSON.stringify(data))
         .then(function (response) {
           console.log(response);
+          $location.path('/')
 
         }, function (error) {
           console.log(error);
@@ -71,16 +75,23 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
     }, function myError(response) {
       $scope.users = response.statusText;
     });
+  }
   };
 
   $scope.email = null;
   $scope.password = null;
   $rootScope.username = $window.sessionStorage.uname;
+  $scope.logStatus = null;
 
 
 
   $scope.loginUser = function (email, password) {
 
+    if(email==null || password==null){
+      $scope.logStatus = "All fields required";
+    }
+
+    else{
 
     $http({
       method: "GET",
@@ -95,12 +106,13 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
         $location.path('/users/' + $window.sessionStorage.uname)
 
       } else {
-        alert("User ID or Password Incorrect.")
+        $scope.logStatus = "User ID or password incorrect";
       }
 
     }, function myError(response) {
       $scope.users = response.statusText;
     });
+  }
   };
 
 
