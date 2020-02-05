@@ -6,6 +6,10 @@ app.controller("dashboard", function($scope, $location, $routeParams, $http, $ti
       $location.path('/');
     }
 
+    if($window.sessionStorage.uname!==''){
+      $location.path('/users/:username');
+    }
+
     $scope.myCities = [];
 
     $http({

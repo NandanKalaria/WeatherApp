@@ -8,9 +8,10 @@
       <div>
           <md-input-container class="md-block" flex-gt-sm>
               <label>E-mail</label>
-              <input required name="email" ng-model="email">
+              <input required name="email" ng-model="email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/">
               <div ng-messages="loginForm.email.$error">
                   <div ng-message="required">This is required.</div>
+                  <span class="form-status" ng-show="loginForm.email.$dirty&&loginForm.email.$error.pattern">Please Enter Valid Email</span>
               </div>
           </md-input-container>
       </div>
@@ -24,7 +25,7 @@
               </div>
           </md-input-container>
       </div>
-      <div style="color: red; font-size: 0.8rem;">{{logStatus}}</div>
+      <div class="form-status">{{logStatus}}</div>
       <div>
           <h6>New to Weather App? <a href="#!/register" style="color: blue;">Sign Up</a> </h6>
       </div>

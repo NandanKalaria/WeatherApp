@@ -35,6 +35,10 @@ body {
   background-image: url(/assets/img/login-hero.jpeg);
   background-size: cover;
 }
+.form-status {
+  color: red;
+  font-size: 0.7em;
+}
 .vrepeatContainer #vertical-container {
   height: 40vw;
   width: 100%;
@@ -74,7 +78,7 @@ body {
   justify-self: center;
 }
 .min {
-  color: skyblue;
+  color: #24b2eb;
 }
 .max {
   color: red;
