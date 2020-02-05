@@ -1,7 +1,7 @@
 <div ng-cloak="" style="margin: 100px;">
 
   <div layout="row" layout-align="center center" >
-    <div><h4>Toggle To Change View &nbsp;</h4></div>
+    <div><h4>Toggle View &nbsp;</h4></div>
     <div>
 <md-switch ng-model="toggle" aria-label="Switch 1">
 </md-switch>
@@ -15,14 +15,13 @@
 
       <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" ng-repeat="city in sharedCities">
         <md-card class="card">
-            <md-card-content style="height: inherit;" layout="column" layout-align="space-between center">
+            <md-card-content style="height: inherit;" layout="column" layout-align="space-around center">
                 <div flex="15" class="name card-font">{{city.name}}</div>
                 <img class="card-img" ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img>
                 <div flex="25" class="temp card-font">{{city.temp}}&#8451;</div>
-                <div flex="15" style="width: 100%; text-align: center;" layout="row" layout-align="center center">
-                  <div flex="45" class="min card-font">{{city.min}}&#8451;</div>
-                  <div flex="10"></div>
-                  <div flex="45" class="max card-font">{{city.max}}&#8451;</div>
+                <div flex="15" style="width: 100%; text-align: center;" layout="row" layout-align="space-around center">
+                  <div flex="" class="min card-font">{{city.min}}&#8451;</div>
+                  <div flex="" class="max card-font">{{city.max}}&#8451;</div>
               </div>
 
         </md-card-content>
@@ -36,7 +35,7 @@
          ng-cloak>
          <md-content layout = "column">
             <md-virtual-repeat-container md-auto-shrink id = "vertical-container">
-               <div layout="row" layout-align="space-between center" md-virtual-repeat = "city in sharedCities"
+               <div layout="row" layout-align="space-around center" md-virtual-repeat = "city in sharedCities"
                   class = "repeated-item-vertical" >
                   <div flex="20" class="name  list-font center"><h2>{{city.name}}</h2></div>
                  <div flex="40" class="center"><img class="list-img center" ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img></div> 
