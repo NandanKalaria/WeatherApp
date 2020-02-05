@@ -16,9 +16,10 @@ app.controller("dashboard", function($scope, $routeParams, $http, $timeout, $win
             url: `https://api.openweathermap.org/data/2.5/weather?q=${element}&appid=4726981a49612e861cd023fbe81eb99d`
           }).then(
             function mySuccess(response) {
-              var City={name:"", icon:"", temp:"", min:"", max:""}
+              var City={name:"", icon:"", des:"", temp:"", min:"", max:""}
               City.name=response.data.name;
               City.icon=response.data.weather[0].main;
+              City.des=response.data.weather[0].main;
               City.temp=parseInt(response.data.main.temp)-273;
               City.min=parseInt(response.data.main.temp_min)-273;
               City.max=parseInt(response.data.main.temp_max)-273;
