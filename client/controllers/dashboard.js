@@ -1,6 +1,10 @@
-app.controller("dashboard", function($scope, $routeParams, $http, $timeout, $window) {
+app.controller("dashboard", function($scope, $location, $routeParams, $http, $timeout, $window) {
            
     $scope.username = $routeParams.username;
+
+    if($window.sessionStorage.uname==''){
+      $location.path('/');
+    }
 
     $scope.myCities = [];
 

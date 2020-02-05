@@ -1,6 +1,10 @@
 app.controller("sharedCity", function($scope, $routeParams, $http, $location, $window) {
   $scope.username = $routeParams.username;
 
+  if($window.sessionStorage.uname==''){
+    $location.path('/');
+  }
+
   $scope.sharedCities = [];
 
   $http({

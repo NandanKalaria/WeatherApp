@@ -1,4 +1,6 @@
-app.controller('Nav', function ($scope, $mdSidenav) {
+app.controller('Nav', function ($scope, $mdSidenav, $window, $rootScope) {
+
+
     $scope.toggleLeft = buildToggler('left');
 
     function buildToggler(componentId) {

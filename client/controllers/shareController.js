@@ -4,6 +4,7 @@
   app.controller('DemoCtrl', DemoCtrl);
 
   var cityToAdd;
+  var unames;
 
   function DemoCtrl($mdDialog) {
     var self = this;
@@ -24,7 +25,7 @@
 
   function DialogCtrl($timeout, $q, $scope, $mdDialog, $http) {
 
-    var allcities = "";
+    
 
     $http({
       method: "GET",
@@ -32,7 +33,8 @@
     }).then(
       function mySuccess(response) {
 
-        console.log(response);
+        unames=response.data;
+        console.log(unames)
 
       },
 
@@ -116,7 +118,8 @@
      * Build `states` list of key/value pairs
      */
     function loadAll() {
-      var allStates = 'Nandan, Tony, Steve, Bruce, Clark, Pepper';
+      
+      var allStates = "Nandan, Tony, Bruce, Steve, Pepper, Clark";
 
       return allStates.split(/, +/g).map(function (state) {
         return {

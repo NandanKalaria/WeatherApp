@@ -24,6 +24,7 @@ app.controller("myController", ["$scope", "$http", "$location", "$rootScope", "$
 
   $scope.logout = function () {
     $window.sessionStorage.uname = "";
+    username="";
     $location.path('/')
   }
 
