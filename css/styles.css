@@ -55,9 +55,6 @@ body {
 .vrepeatContainer md-virtual-repeat-container {
   border: solid 1px white;
 }
-.card-bg {
-  background-color: linear-gradient(to right, #5499C7, #A2D9CE);
-}
 .card {
   width: 300px;
   height: 350px;

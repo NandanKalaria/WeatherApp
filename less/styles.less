@@ -1,3 +1,12 @@
+@background-primary: white;
+@max-color: red;
+@min-color: rgb(36, 178, 235);
+@primary-color: black;
+
+
+
+
+
 *,
 *::before,
 *::after {
@@ -25,7 +34,7 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  background-color: white;
+  background-color: @background-primary;
   display: grid;
   width: 70vw;
   height: 65vh;
@@ -64,11 +73,7 @@ body {
 }
 
 .vrepeatContainer md-virtual-repeat-container {
-  border: solid 1px white;
-}
-
-.card-bg {
-  background-color: linear-gradient(to right, #5499C7, #A2D9CE);
+  border: solid 1px @background-primary;
 }
 
 .card {
@@ -96,20 +101,20 @@ body {
 }
 
 .min {
-  color: rgb(36, 178, 235);
+  color: @min-color;
 
 }
 
 .max {
-  color: red;
+  color: @max-color;
 }
 
 .temp {
-  color: black;
+  color: @primary-color;
 }
 
 .name {
-  color: black;
+  color: @primary-color;
 }
 
 .center {
