@@ -4,7 +4,6 @@
   app.controller('DemoCtrl', DemoCtrl);
 
   var cityToAdd;
-  var unames;
 
   function DemoCtrl($mdDialog) {
     var self = this;
@@ -24,26 +23,6 @@
   }
 
   function DialogCtrl($timeout, $q, $scope, $mdDialog, $http) {
-
-    
-
-    $http({
-      method: "GET",
-      url: `http://localhost:3000/usernames`
-    }).then(
-      function mySuccess(response) {
-
-        unames=response.data;
-        console.log(unames)
-
-      },
-
-
-
-      function myError(response) {
-        $scope.myWelcome = response.statusText;
-      }
-    );
 
 
     var self = this;
@@ -117,9 +96,12 @@
     /**
      * Build `states` list of key/value pairs
      */
+
+
     function loadAll() {
       
-      var allStates = "Nandan, Tony, Bruce, Steve, Pepper, Clark";
+      var names = "Nandan, Tony, Bruce, Steve, Pepper, Clark, Janki, Varsha, Kirti";
+      var allStates = names;
 
       return allStates.split(/, +/g).map(function (state) {
         return {
