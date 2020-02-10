@@ -24,6 +24,7 @@ app.controller("dashboard", function($scope, $location, $routeParams, $http, $ti
             url: `https://api.openweathermap.org/data/2.5/weather?q=${element}&appid=4726981a49612e861cd023fbe81eb99d`
           }).then(
             function mySuccess(response) {
+             
               var City={name:"", icon:"", des:"", temp:"", min:"", max:""}
               City.name=response.data.name;
               City.icon=response.data.weather[0].main;
@@ -41,6 +42,7 @@ app.controller("dashboard", function($scope, $location, $routeParams, $http, $ti
             }
           );
         });
+        
       },
       function myError(response) {
         $scope.myWelcome = response.statusText;

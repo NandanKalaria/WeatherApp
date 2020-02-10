@@ -25,9 +25,11 @@
           </md-not-found>
         </md-autocomplete>
       </form>
+      <br>
+      <p class="form-status">{{errorStatus}}</p>
+      <p class="form-success">{{successStatus}}</p>
     </div>
   </md-dialog-content>
-
   <md-dialog-actions>
     <md-button aria-label="Finished" ng-click="ctrl.finish($event, ctrl.searchText)">Add</md-button>
   </md-dialog-actions>

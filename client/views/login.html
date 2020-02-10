@@ -1,6 +1,6 @@
 
 
-<form name="loginForm">
+<form name="loginForm" style="border-radius: 25px;">
 <div class="grid-container md-whiteframe-15dp" layout="row" >
 
   <div style="width: 30vw;" flex="noshrink" layout="column" layout-align="center center">
@@ -18,7 +18,7 @@
           </md-input-container>
       </div>
 
-      <div>
+      <div ng-messages="loginForm.password.$error">
           <md-input-container class="md-block" flex-gt-sm>
               <label>Password</label>
               <input required name="password" ng-model="password">
@@ -27,7 +27,9 @@
               </div>
           </md-input-container>
       </div>
-      <div class="form-status">{{logStatus}}</div>
+      <div class="form-status">{{logStatus}}
+
+      </div>
       <div>
           <h6>New to Weather App? <a href="#!/register" style="color: blue;">Sign Up</a> </h6>
       </div>

@@ -30,6 +30,12 @@ app.controller("myController", [
 
     $scope.regStatus = null;
 
+    $scope.formEmpty = function(){
+      if ($scope.email == null || $scope.password == null) {
+        $scope.logStatus = "All fields required";
+      }
+    }
+
     $scope.adduser = function(fname, lname, eid, pwd) {
       $http({
         method: "GET",

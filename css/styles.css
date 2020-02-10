@@ -18,11 +18,13 @@ body {
   margin: auto 0;
 }
 .grid-container {
+  border-radius: 25px;
   position: fixed;
   top: 50%;
   left: 50%;
   background-color: white;
   display: grid;
+  grid-gap: 50px;
   width: 70vw;
   height: 65vh;
   margin-top: -30vh;
@@ -31,17 +33,17 @@ body {
   /*set to a negative number 1/2 of your width*/
   grid-template-columns: minmax(200px, 3fr) minmax(200px, 5fr);
 }
-@media (max-width: 800px) {
-  .grid-container {
-    width: 95vw;
-  }
-}
 .grid-container-image {
-  background-image: url(/assets/img/login-hero.jpeg);
+  border-radius: 0px 25px 25px 0px;
+  background-image: url(/assets/img/login-hero2.jpg);
   background-size: cover;
 }
 .form-status {
   color: red;
+  font-size: 0.75em;
+}
+.form-success {
+  color: #2ECC71;
   font-size: 0.75em;
 }
 .vrepeatContainer #vertical-container {
@@ -56,7 +58,7 @@ body {
 }
 @media (max-width: 800px) {
   .vrepeatContainer .repeated-item-vertical {
-    height: 15vh;
+    height: 12vh;
   }
 }
 .vrepeatContainer md-content {
@@ -70,18 +72,18 @@ body {
   height: 350px;
 }
 .card-font {
-  font-size: xx-large;
+  font-size: large;
 }
 .card-img {
   height: 100px;
   width: 100px;
 }
 .list-font {
-  font-size: 2vw;
+  font-size: 1.2vw;
 }
 @media (max-width: 400px) {
   .list-font {
-    font-size: 5vw;
+    font-size: 8vw;
   }
 }
 .list-img {
@@ -112,4 +114,16 @@ body {
   font-size: 0.8em;
   text-align: left;
   width: 100%;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #2874A6;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
 }

@@ -14,7 +14,7 @@
         md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="20px" md-gutter-gt-sm="80px">
 
         <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" ng-repeat="city in myCities">
-            <md-card class="card">
+            <md-card class="card md-whiteframe-21dp">
                 <md-card-content style="height: inherit;" layout="column" layout-align="space-around center">
                     <div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak>
                         <md-icon ng-click="ctrl.openDialog($event, city.name)" class="md-raised"
@@ -35,7 +35,7 @@
             </md-card>
         </md-grid-tile>
 
-        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" ng-show="addButton">
             <div ng-controller="AddCtrl as ctrl" layout="column" ng-cloak layout-align="space-around center">
                 <img ng-click="ctrl.openDialog($event)" style="height: inherit;" ng-src="/assets/img/add.png"></img>
             </div>
@@ -44,7 +44,7 @@
     </md-grid-list>
     <div ng-if="toggle" class="vrepeatContainer" ng-controller="vrepeatController as ctrl" ng-cloak>
         <md-content layout="column">
-            <md-virtual-repeat-container md-auto-shrink id="vertical-container">
+            <md-virtual-repeat-container md-auto-shrink id="vertical-container" >
                 <div layout="row" layout-align="space-around center" md-virtual-repeat="city in myCities"
                     class="repeated-item-vertical">
 

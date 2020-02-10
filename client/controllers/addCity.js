@@ -18,7 +18,7 @@
     };
   }
 
-  function DialogCtrl($timeout, $q, $scope, $mdDialog, $http, $window) {
+  function DialogCtrl($timeout, $q, $scope, $mdDialog, $http, $window, $route) {
 
 
     var self = this;
@@ -42,7 +42,7 @@
           var cityArr = response.data[0].cities;
           
           if(cityArr.includes(city)){
-            alert("Already exists");
+            $scope.errorStatus="City already added. Try another city!";
           }
 
           else{
@@ -73,6 +73,8 @@
           $http.put(`http://localhost:3000/users/${id}`, JSON.stringify(data))
             .then(function (response) {
               console.log(response);
+              $scope.successStatus="City added successfully!";
+              $route.reload();
             }, function (error) {
               console.log(error);
 
@@ -85,8 +87,6 @@
           console.log(error);
 
         })
-
-      $mdDialog.hide();
     };
 
     // ******************************
