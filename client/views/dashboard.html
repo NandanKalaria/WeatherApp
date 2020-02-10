@@ -53,10 +53,12 @@
                             ng-src="/assets/img/weather-icons/{{city.icon}}.png"></img></div>
                     <div flex="" class="name list-font center">{{city.des}}</div>
                     <div flex="" class="temp list-font center">{{city.temp}}&#8451;</div>
+                    <div flex="" layout = "column">
                     <div flex="" class="min list-font center">Min&nbsp;{{city.min}}&#8451;</div>
                     <div flex="" class="max list-font center">Max&nbsp;{{city.max}}&#8451;</div>
+                    </div>
                     <div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak>
-                        <md-icon ng-click="ctrl.openDialog($event, city.name)" md-svg-icon="/assets/img/share.svg">
+                        <md-icon ng-click="ctrl.openDialog($event, city.name)" class="list-img" md-svg-icon="/assets/img/share.svg">
                         </md-icon>
                     </div>
 

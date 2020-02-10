@@ -40,7 +40,13 @@
       $http.get(`http://localhost:3000/users?firstName=${$window.sessionStorage.uname}`)
         .then(function (response) {
           var cityArr = response.data[0].cities;
-          console.log(cityArr);
+          
+          if(cityArr.includes(city)){
+            alert("Already exists");
+          }
+
+          else{
+            console.log(cityArr);
           cityArr.push(city);
           console.log(cityArr);
 
@@ -71,7 +77,11 @@
               console.log(error);
 
             })
-        }, function (error) {
+        }
+
+          }
+
+          , function (error) {
           console.log(error);
 
         })
@@ -95,8 +105,8 @@
      * Build `states` list of key/value pairs
      */
     function loadAll() {
-      var allStates = 'Dubai, London, Bangkok, Paris, Singapore, New York, Honk Kong, Barcelona, Bali, Istanbul, Phuket, Qatar,\
-      Vadodara, Boston, Chennai, Delhi, Kolkata, Tokyo, Rome, Berlin, Amsterdam, Surat, Madrid, Sydney, Venice';
+      var allStates = 'Auckland, Dubai, Melbourne, Perth, Seattle, Shanghai, London, Beijing, Bangkok, Paris, Singapore, New York, Honk Kong, Barcelona, Bali, Istanbul, Phuket, Qatar,\
+      Vadodara, Boston, Chennai, Toronto, Brisbane, Brussels, Chicago, Cairo, Jakarta, Delhi, Kolkata, Tokyo, Rome, Berlin, Amsterdam, Surat, Madrid, Sydney, Venice';
 
       return allStates.split(/, +/g).map(function (state) {
         return {

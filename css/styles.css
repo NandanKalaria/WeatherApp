@@ -31,6 +31,11 @@ body {
   /*set to a negative number 1/2 of your width*/
   grid-template-columns: minmax(200px, 3fr) minmax(200px, 5fr);
 }
+@media (max-width: 800px) {
+  .grid-container {
+    width: 95vw;
+  }
+}
 .grid-container-image {
   background-image: url(/assets/img/login-hero.jpeg);
   background-size: cover;
@@ -40,7 +45,7 @@ body {
   font-size: 0.75em;
 }
 .vrepeatContainer #vertical-container {
-  height: 40vw;
+  height: 70vh;
   width: 100%;
 }
 .vrepeatContainer .repeated-item-vertical {
@@ -48,6 +53,11 @@ body {
   box-sizing: border-box;
   height: 10vw;
   padding: 20px;
+}
+@media (max-width: 800px) {
+  .vrepeatContainer .repeated-item-vertical {
+    height: 15vh;
+  }
 }
 .vrepeatContainer md-content {
   margin: 5vw;
@@ -60,14 +70,19 @@ body {
   height: 350px;
 }
 .card-font {
-  font-size: x-large;
+  font-size: xx-large;
 }
 .card-img {
   height: 100px;
   width: 100px;
 }
 .list-font {
-  font-size: 1.6vw;
+  font-size: 2vw;
+}
+@media (max-width: 400px) {
+  .list-font {
+    font-size: 5vw;
+  }
 }
 .list-img {
   height: 6vw;

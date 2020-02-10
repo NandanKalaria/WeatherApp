@@ -44,6 +44,10 @@ body {
   /*set to a negative number 1/2 of your width*/
 
   grid-template-columns: minmax(200px, 3fr) minmax(200px, 5fr);
+
+  @media (max-width: 800px){
+    width: 95vw;
+  }
 }
 
 .grid-container-image {
@@ -57,8 +61,10 @@ body {
 }
 
 .vrepeatContainer #vertical-container {
-  height: 40vw;
+  height: 70vh;
   width: 100%;
+
+  
 }
 
 .vrepeatContainer .repeated-item-vertical {
@@ -66,6 +72,9 @@ body {
   box-sizing: border-box;
   height: 10vw;
   padding: 20px;
+  @media (max-width: 800px){
+    height: 15vh;
+  }
 }
 
 .vrepeatContainer md-content {
@@ -82,7 +91,7 @@ body {
 }
 
 .card-font {
-  font-size: x-large;
+  font-size: xx-large;
 }
 
 .card-img {
@@ -91,7 +100,10 @@ body {
 }
 
 .list-font {
-  font-size: 1.6vw;
+  font-size: 2vw;
+  @media (max-width: 400px){
+    font-size: 5vw;
+  }
 }
 
 .list-img {
