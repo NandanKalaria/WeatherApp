@@ -1,4 +1,11 @@
 <div ng-cloak="" style="margin: 100px;">
+
+    <div ng-hide="loader" style="text-align: center;">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        
     <div layout="row" layout-align="center center">
         <div>
             <h4>Toggle View &nbsp;</h4>
@@ -10,15 +17,9 @@
     </div>
     <br>
 
-<div ng-hide="loader" style="text-align: center;">
-    <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>
-    </div>
 
-
-    <md-grid-list ng-if="!toggle" md-cols-xs="1" md-cols-sm="1" md-cols-md="2" md-cols-gt-md="3"
-        md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="20px" md-gutter-gt-sm="80px">
+    <md-grid-list ng-if="!toggle" md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="4"
+    md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="20px">
 
         <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1" ng-repeat="city in myCities">
             <md-card class="card md-whiteframe-21dp">
