@@ -12,6 +12,10 @@ app.controller("dashboard", function($scope, $location, $routeParams, $http, $ti
 
     $scope.myCities = [];
 
+    $timeout(function () {
+      $scope.loader = true;
+  }, 1500);
+
     $http({
       method: "GET",
       url: `http://localhost:3000/users?firstName=${$window.sessionStorage.uname}`
