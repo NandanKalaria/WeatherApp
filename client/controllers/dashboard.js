@@ -14,7 +14,7 @@ app.controller("dashboard", function($scope, $location, $routeParams, $http, $ti
 
     $timeout(function () {
       $scope.loader = true;
-  }, 1500);
+  }, 2000);
 
     $http({
       method: "GET",

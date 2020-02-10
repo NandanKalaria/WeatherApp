@@ -22,7 +22,7 @@
     };
   }
 
-  function DialogCtrl($timeout, $q, $scope, $mdDialog, $http) {
+  function DialogCtrl($timeout, $q, $scope, $mdDialog, $http, $window) {
 
 
     var self = this;
@@ -39,8 +39,12 @@
     };
     self.finish = function ($event, user) {
 
-      console.log(user);
-      $http.get(`http://localhost:3000/users?firstName=${user}`)
+      if(user==$window.sessionStorage.uname){
+        $scope.shareStatus="Can't share city with your own self. Select other user.";
+      }
+
+      else{
+        $http.get(`http://localhost:3000/users?firstName=${user}`)
         .then(function (response) {
           var cityArr = response.data[0].shared;
           console.log(cityArr);
@@ -70,6 +74,7 @@
           $http.put(`http://localhost:3000/users/${id}`, JSON.stringify(data))
             .then(function (response) {
               console.log(response);
+              $scope.shareStatus=`City shared with ${user}`;
             }, function (error) {
               console.log(error);
 
@@ -78,7 +83,10 @@
           console.log(error);
 
         })
-      $mdDialog.hide();
+      }
+
+      
+
     };
 
     // ******************************
