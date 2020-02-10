@@ -27,7 +27,7 @@
               </div>
           </md-input-container>
       </div>
-      <div class="form-status">{{logStatus}}
+      <div class="form-status" ng-show="loginForm.email.$invalid&&loginForm.password.$invalid">{{logStatus}}
 
       </div>
       <div>

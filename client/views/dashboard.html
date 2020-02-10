@@ -43,7 +43,7 @@
             </md-card>
         </md-grid-tile>
 
-        <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+        <md-grid-tile ng-show="loader" md-rowspan="1" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
             <div ng-controller="AddCtrl as ctrl" layout="column" ng-cloak layout-align="space-around center">
                 <img ng-click="ctrl.openDialog($event)" style="height: inherit;" ng-src="/assets/img/add.png"></img>
             </div>

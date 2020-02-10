@@ -45,7 +45,7 @@
               </div>
           </md-input-container>
       </div>
-      <div class="form-status">{{regStatus}}</div>
+      <div class="form-status" ng-show="signupForm.fname.$invalid&&signupForm.lname.$invalid&&signupForm.eid.$invalid&&signupForm.pwd.$invalid">{{regStatus}}</div>
 
       <div>
               <md-button class="md-raised md-primary" ng-click="adduser(fname, lname, eid, pwd)">Sign Up</md-button>

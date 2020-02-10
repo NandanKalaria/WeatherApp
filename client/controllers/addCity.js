@@ -42,7 +42,7 @@
           var cityArr = response.data[0].cities;
           
           if(cityArr.includes(city)){
-            $scope.errorStatus="City already added. Try another city!";
+            $scope.addStatus=`${city} already added. Try another city!`;
           }
 
           else{
@@ -73,7 +73,7 @@
           $http.put(`http://localhost:3000/users/${id}`, JSON.stringify(data))
             .then(function (response) {
               console.log(response);
-              $scope.successStatus="City added successfully!";
+              $scope.addStatus=`${city} added successfully!`;
               $route.reload();
             }, function (error) {
               console.log(error);
