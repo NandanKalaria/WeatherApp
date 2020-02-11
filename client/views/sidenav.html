@@ -9,23 +9,26 @@
       </md-toolbar>
       <md-list>
         <md-list-item class="md-3-line" ng-click="dashboard()">
-          <div class="md-list-item-text">
-            <h3>My Dashboard</h3>
+          <div class="md-list-item-text" layout="row" layout-align="start center">
+            <div flex="20"> <img style="width: 1.7rem;" ng-src="/assets/img/home.png"></img></div>
+            <h3 flex="">My Dashboard</h3>
           </div>
           <md-divider></md-divider>
         </md-list-item>
 
         <md-list-item ng-click="sharedCity()" class="md-3-line">
-          <div class="md-list-item-text">
-            <h3>Shared Cities</h3>
+          <div class="md-list-item-text" layout="row" layout-align="start center">
+            <div flex="20"> <img  style="width: 2rem;" ng-src="/assets/img/navshare.png"></img></div>
+            <h3 flex="">Shared Cities</h3>
           </div>
           <md-divider></md-divider>
         </md-list-item>
 
        
           <md-list-item class="md-3-line" ng-click="toggleLeft(); logout()">
-            <div class="md-list-item-text">
-              <h3>Logout</h3>
+            <div class="md-list-item-text" layout="row" layout-align="start center">
+              <div flex="20">  <img style="width: 1.5rem;" ng-src="/assets/img/logout.png"></img></div>
+              <h3 flex="">Logout</h3>
             </div>
             <md-divider></md-divider>
           </md-list-item>
