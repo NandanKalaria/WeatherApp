@@ -1,4 +1,5 @@
 app.controller("dashboard", function($scope, $location, $routeParams, $http, $timeout, $window, $rootScope) {
+
            
     $scope.username = $routeParams.username;
 
@@ -8,6 +9,14 @@ app.controller("dashboard", function($scope, $location, $routeParams, $http, $ti
 
     if($window.sessionStorage.uname!==''){
       $location.path('/users/:username');
+    }
+
+    $scope.shareIt=function(){
+      $scope.sha=true;
+    }
+
+    $scope.mouseleave=function(){
+      $scope.sha=false;
     }
 
     $scope.myCities = [];

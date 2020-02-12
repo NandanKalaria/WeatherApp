@@ -15,7 +15,7 @@ var app = angular
     })
 
 
-    .when("/users/:username", {
+    .when(`/users/:username`, {
       templateUrl: "client/views/dashboard.html",
       controller: "dashboard"
     })
